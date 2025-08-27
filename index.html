@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OurTVGuide - Best TV Reviews USA</title>
+  <meta name="description" content="Find the best TV reviews, buying guides, and comparisons in the USA. Honest, unbiased, and ad-friendly content.">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    html { scroll-behavior: smooth; }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-900">
+
+  <!-- Navbar -->
+  <nav class="bg-gray-900 text-white p-4 flex justify-between fixed top-0 w-full shadow z-50">
+    <a href="#home" class="font-bold text-xl text-yellow-400">OurTVGuide</a>
+    <div>
+      <a href="#home" class="px-3 hover:text-yellow-400">Home</a>
+      <a href="#reviews" class="px-3 hover:text-yellow-400">Reviews</a>
+      <a href="#guide" class="px-3 hover:text-yellow-400">Buying Guide</a>
+      <a href="#faq" class="px-3 hover:text-yellow-400">FAQ</a>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="home" class="text-center py-20 bg-gradient-to-r from-gray-900 to-gray-800 text-white mt-14">
+    <h1 class="text-4xl font-bold">Welcome to OurTVGuide</h1>
+    <p class="mt-3 text-lg">Your trusted source for TV reviews, buying tips, and honest comparisons in the USA.</p>
+    <button onclick="scrollToSection('reviews')" class="mt-6 px-6 py-3 bg-yellow-400 text-gray-900 font-semibold rounded hover:bg-yellow-300">
+      Explore Reviews
+    </button>
+  </section>
+
+  <!-- Reviews Section -->
+  <section id="reviews" class="p-10">
+    <h2 class="text-3xl font-bold mb-6 text-center">Latest TV Reviews</h2>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="bg-white p-5 shadow rounded">
+        <h3 class="font-bold text-xl">Samsung QLED 2025</h3>
+        <p class="mt-2 text-sm">Bright display, 4K quality, and smooth smart TV interface. Great for families.</p>
+        <button onclick="openModal('Samsung QLED 2025 offers excellent brightness, realistic colors, and smooth app experience. Perfect choice for budget-conscious buyers.')" class="mt-3 text-yellow-600 font-semibold">Read Review →</button>
+      </div>
+      <div class="bg-white p-5 shadow rounded">
+        <h3 class="font-bold text-xl">LG OLED Evo</h3>
+        <p class="mt-2 text-sm">Deep blacks, vivid colors, and premium cinematic experience.</p>
+        <button onclick="openModal('LG OLED Evo delivers stunning contrast, Dolby Vision, and best sound quality. Ideal for movie lovers.')" class="mt-3 text-yellow-600 font-semibold">Read More →</button>
+      </div>
+      <div class="bg-white p-5 shadow rounded">
+        <h3 class="font-bold text-xl">Sony Bravia XR</h3>
+        <p class="mt-2 text-sm">Immersive sound, 4K clarity, and perfect for gamers.</p>
+        <button onclick="openModal('Sony Bravia XR features a powerful processor, immersive surround sound, and low-latency gaming mode. Best for gamers and entertainment lovers.')" class="mt-3 text-yellow-600 font-semibold">Read More →</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Buying Guide -->
+  <section id="guide" class="p-10 bg-gray-100">
+    <h2 class="text-3xl font-bold mb-6 text-center">TV Buying Guide (USA 2025)</h2>
+    <ul class="space-y-3 max-w-3xl mx-auto text-lg">
+      <li>📺 <b>Screen Size</b> – Choose based on your room size. (55-65 inch is ideal for most homes).</li>
+      <li>🔆 <b>Resolution</b> – 4K is standard, 8K is future-ready but costly.</li>
+      <li>🎮 <b>Gaming</b> – Look for low-latency & HDMI 2.1 ports.</li>
+      <li>🎶 <b>Sound</b> – Dolby Atmos or DTS-X improves experience.</li>
+      <li>💰 <b>Budget</b> – Samsung = budget, LG = premium cinema, Sony = gaming & balanced.</li>
+    </ul>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" class="p-10">
+    <h2 class="text-3xl font-bold mb-6 text-center">Frequently Asked Questions</h2>
+    <div class="max-w-3xl mx-auto space-y-4">
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="font-bold">Which TV brand is best for long-term use?</h3>
+        <p>LG OLED for premium, Samsung QLED for budget, Sony Bravia for balanced performance.</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="font-bold">Do I need 8K TV in 2025?</h3>
+        <p>No, 4K is still the best value. 8K content is very limited.</p>
+      </div>
+      <div class="bg-white p-4 rounded shadow">
+        <h3 class="font-bold">Best budget TV in the USA?</h3>
+        <p>Samsung QLED and TCL Roku TVs are the best budget-friendly choices.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 text-center py-6">
+    <p>© 2025 OurTVGuide. All Rights Reserved. | Terms & Conditions Apply</p>
+    <p class="mt-2">Support: <a href="mailto:support@ourtvguide.site" class="text-yellow-400">support@ourtvguide.site</a></p>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="fixed inset-0 hidden bg-black bg-opacity-50 flex items-center justify-center z-50">
+    <div class="bg-white p-6 rounded shadow-lg max-w-lg">
+      <h2 class="text-xl font-bold mb-2">Review</h2>
+      <p id="modalText"></p>
+      <button onclick="closeModal()" class="mt-4 px-4 py-2 bg-gray-900 text-white rounded">Close</button>
+    </div>
+  </div>
+
+  <!-- JS -->
+  <script>
+    function scrollToSection(id) {
+      document.getElementById(id).scrollIntoView({ behavior: "smooth" });
+    }
+    function openModal(text) {
+      document.getElementById("modalText").innerText = text;
+      document.getElementById("modal").classList.remove("hidden");
+    }
+    function closeModal() {
+      document.getElementById("modal").classList.add("hidden");
+    }
+  </script>
+
+</body>
+</html>
